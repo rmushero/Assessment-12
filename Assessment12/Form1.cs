@@ -103,10 +103,8 @@ namespace Assessment12
             expDescriptionBox.Clear();
             exResWeight.Clear();
             exVolume.Clear();
-            foreach (Experiment exp in Experiments)
-            {
-                Experiments[exp.ExpNumber] = 0;
-            }
+            expListBox.Items.Clear();
+           
 
 
         }
@@ -127,7 +125,7 @@ namespace Assessment12
             resultWLabel.Enabled = true;
         }
 
-        private void expListBox_SelectedIndexChanged(object sender, EventArgs e)
+        private void expListBox_doubleClick(object sender, EventArgs e)
         {
 
         }
