@@ -182,7 +182,7 @@
             this.expListBox.Name = "expListBox";
             this.expListBox.Size = new System.Drawing.Size(391, 173);
             this.expListBox.TabIndex = 15;
-           
+            this.expListBox.SelectedIndexChanged += new System.EventHandler(this.expListBox_SelectedIndexChanged);
             // 
             // label7
             // 

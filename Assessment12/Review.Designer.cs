@@ -35,6 +35,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.closeButton = new System.Windows.Forms.Button();
+            this.stuNameLabel = new System.Windows.Forms.Label();
+            this.exNumLabel = new System.Windows.Forms.Label();
+            this.exDescLabel = new System.Windows.Forms.Label();
+            this.rWeightLabel = new System.Windows.Forms.Label();
+            this.rColorLabel = new System.Windows.Forms.Label();
+            this.rVolumeLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // resultVolLabel
@@ -104,11 +110,65 @@
             this.closeButton.UseVisualStyleBackColor = true;
             this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
             // 
+            // stuNameLabel
+            // 
+            this.stuNameLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.stuNameLabel.Location = new System.Drawing.Point(127, 32);
+            this.stuNameLabel.Name = "stuNameLabel";
+            this.stuNameLabel.Size = new System.Drawing.Size(100, 23);
+            this.stuNameLabel.TabIndex = 27;
+            // 
+            // exNumLabel
+            // 
+            this.exNumLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.exNumLabel.Location = new System.Drawing.Point(127, 67);
+            this.exNumLabel.Name = "exNumLabel";
+            this.exNumLabel.Size = new System.Drawing.Size(100, 23);
+            this.exNumLabel.TabIndex = 28;
+            // 
+            // exDescLabel
+            // 
+            this.exDescLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.exDescLabel.Location = new System.Drawing.Point(127, 102);
+            this.exDescLabel.Name = "exDescLabel";
+            this.exDescLabel.Size = new System.Drawing.Size(100, 23);
+            this.exDescLabel.TabIndex = 29;
+            // 
+            // rWeightLabel
+            // 
+            this.rWeightLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.rWeightLabel.Location = new System.Drawing.Point(127, 137);
+            this.rWeightLabel.Name = "rWeightLabel";
+            this.rWeightLabel.Size = new System.Drawing.Size(100, 23);
+            this.rWeightLabel.TabIndex = 30;
+            // 
+            // rColorLabel
+            // 
+            this.rColorLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.rColorLabel.Location = new System.Drawing.Point(127, 172);
+            this.rColorLabel.Name = "rColorLabel";
+            this.rColorLabel.Size = new System.Drawing.Size(100, 23);
+            this.rColorLabel.TabIndex = 31;
+            // 
+            // rVolumeLabel
+            // 
+            this.rVolumeLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.rVolumeLabel.Location = new System.Drawing.Point(127, 207);
+            this.rVolumeLabel.Name = "rVolumeLabel";
+            this.rVolumeLabel.Size = new System.Drawing.Size(100, 23);
+            this.rVolumeLabel.TabIndex = 32;
+            // 
             // Review
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(349, 285);
+            this.Controls.Add(this.rVolumeLabel);
+            this.Controls.Add(this.rColorLabel);
+            this.Controls.Add(this.rWeightLabel);
+            this.Controls.Add(this.exDescLabel);
+            this.Controls.Add(this.exNumLabel);
+            this.Controls.Add(this.stuNameLabel);
             this.Controls.Add(this.closeButton);
             this.Controls.Add(this.resultVolLabel);
             this.Controls.Add(this.resultColorLabel);
@@ -131,5 +191,11 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button closeButton;
+        public System.Windows.Forms.Label stuNameLabel;
+        public System.Windows.Forms.Label exNumLabel;
+        public System.Windows.Forms.Label exDescLabel;
+        public System.Windows.Forms.Label rWeightLabel;
+        public System.Windows.Forms.Label rColorLabel;
+        public System.Windows.Forms.Label rVolumeLabel;
     }
 }
