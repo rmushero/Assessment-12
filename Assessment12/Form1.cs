@@ -54,14 +54,36 @@ namespace Assessment12
 
         private void createButton_Click(object sender, EventArgs e)
         {
+
             //create experiment object
             Experiment exp = new Experiment();
-            //get experiment data
-            getExperimentData(exp);
-
-            for (int index = 0; index < Experiments.Length; index++)
+            if (exp.StuName != "")
             {
-                Experiments[index] = new Experiment();
+                //get experiment data
+                getExperimentData(exp);
+
+                for (int index = 0; index < Experiments.Length; index++)
+                {
+                    Experiments[index] = new Experiment();
+                }
+            }
+            else if (exp.ExpNumber > 0 && exp.ExDesc != "")
+            {
+                getExperimentData(exp);
+
+                for (int index = 0; index < Experiments.Length; index++)
+                {
+                    Experiments[index] = new Experiment();
+                }
+
+            }
+            else{
+                getExperimentData(exp);
+
+                for (int index = 0; index < Experiments.Length; index++)
+                {
+                    Experiments[index] = new Experiment();
+                }
             }
         }
 
