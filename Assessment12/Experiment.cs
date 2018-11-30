@@ -14,7 +14,7 @@ namespace Assessment12
         private string _exDesc;
         private decimal _exWeight;
         private string _exColor;
-        private decimal _exValue;
+        private decimal _exVolume;
 
         //constructor
 
@@ -25,7 +25,7 @@ namespace Assessment12
             _exDesc = "";
             _exWeight = 0m;
             _exColor = "";
-            _exValue = 0m;
+            _exVolume = 0m;
         }
         //overloaded with student name known
         public Experiment(string stuName)
@@ -34,7 +34,8 @@ namespace Assessment12
             _exDesc = "";
             _exWeight = 0m;
             _exColor = "";
-            _exValue = 0m;
+            _stuName = stuName;
+            _exVolume = 0m;
         }
         //overloaded with experiement number and experiment description known
         public Experiment(int expNumber, string expDesc)
@@ -42,7 +43,9 @@ namespace Assessment12
             _stuName = "";
             _exWeight = 0m;
             _exColor = "";
-            _exValue = 0m;
+            _expNumber = expNumber;
+            _exDesc = expDesc;
+            _exVolume = 0m;
         }
 
         public string StuName
@@ -62,13 +65,18 @@ namespace Assessment12
         }
         public decimal ExWeight
         {
-            get { return _exWeight;}
+            get { return _exWeight; }
             set { _exWeight = value; }
         }
         public string ExColor
         {
             get { return _exColor; }
             set { _exColor = value; }
+        }
+        public decimal ExVolume
+        {
+            get { return _exVolume; }
+            set { _exVolume = value; }
         }
     }
     

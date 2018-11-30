@@ -14,25 +14,56 @@ namespace Assessment12
     {
         const int SIZE = 50;
         Experiment[] Experiments = new Experiment[SIZE];
+        private Experiment exp = new Experiment();
         public Form1()
         {
             InitializeComponent();
         }
-
-        private void getExperimentData(Experiment exp)
+        private void exitButton_Click(object sender, EventArgs e)
         {
+            this.Close();
+        }
+
+        private void createButton_Click(object sender, EventArgs e)
+        {
+            string studentName = stuNameBox.Text;
+            int experimentNumber = Convert.ToInt32(exNumBox.Text);
+            string experimentDescription = expDescriptionBox.Text;
+
+            if (studentName != "")
+            {
+                //get experiment data
+                Experiment exp = new Experiment(studentName);
+
+            }
+            else if (experimentNumber > 0 && experimentDescription != "")
+            {
+                Experiment exp = new Experiment(experimentNumber, experimentDescription);
+            }
+            else
+            {
+                Experiment exp = new Experiment();
+            }
+
+            enabledLabels();
+
+        }
+
+        private void setButton_Click(object sender, EventArgs e)
+        {
+
             decimal weight;
             int number;
-         
-            if(int.TryParse(exNumBox.Text, out number))
+
+            if (int.TryParse(exNumBox.Text, out number) && number < 50)
             {
                 exp.ExpNumber = number;
             }
             else
             {
-                MessageBox.Show("Invalid Experiment Number");
+                MessageBox.Show("Invalid Experiment Number Please Enter a NUMBER between 1 and 50");
             }
-            if(decimal.TryParse(exResWeight.Text, out weight))
+            if (decimal.TryParse(exResWeight.Text, out weight))
             {
                 exp.ExWeight = weight;
             }
@@ -45,80 +76,60 @@ namespace Assessment12
             exp.StuName = stuNameBox.Text;
 
 
-
-        }
-        private void exitButton_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void createButton_Click(object sender, EventArgs e)
-        {
-
-            //create experiment object
-            Experiment exp = new Experiment();
-            if (exp.StuName != "")
-            {
-                //get experiment data
-                getExperimentData(exp);
-
-                for (int index = 0; index < Experiments.Length; index++)
-                {
-                    Experiments[index] = new Experiment();
-                }
-            }
-            else if (exp.ExpNumber > 0 && exp.ExDesc != "")
-            {
-                getExperimentData(exp);
-
-                for (int index = 0; index < Experiments.Length; index++)
-                {
-                    Experiments[index] = new Experiment();
-                }
-
-            }
-            else{
-                getExperimentData(exp);
-
-                for (int index = 0; index < Experiments.Length; index++)
-                {
-                    Experiments[index] = new Experiment();
-                }
-            }
-        }
-
-        private void setButton_Click(object sender, EventArgs e)
-        {
-            //create experiment object
-            Experiment exp = new Experiment();
-            //get experiment data
-            getExperimentData(exp);
-           
-            
         }
 
         private void saveButton_Click(object sender, EventArgs e)
         {
-            Experiment exp = new Experiment();
-            getExperimentData(exp);
-            expListBox.Items.Add(exp.ExpNumber + '\t' + exp.ExDesc);
+            Experiments[exp.ExpNumber] = new Experiment();
+
+            //print data to list box
+         expListBox.Items.Add(exp.ExpNumber + " \t " + exp.ExDesc);
+            //clear data from fields
             stuNameBox.Clear();
             exNumBox.Clear();
             exResColor.Clear();
             expDescriptionBox.Clear();
             exResWeight.Clear();
+            exVolume.Clear();
             
         }
 
         private void clearButton_Click(object sender, EventArgs e)
         {
             //clearing all parts of the form as well don't forget to clear the array
+            stuNameBox.Clear();
+            exNumBox.Clear();
+            exResColor.Clear();
+            expDescriptionBox.Clear();
+            exResWeight.Clear();
+            exVolume.Clear();
+            foreach (Experiment exp in Experiments)
+            {
+                Experiments[exp.ExpNumber] = 0;
+            }
+
+
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
             //create headers for the list box. 
-            expListBox.Items.Add("Experiment Number" + '\t' + "Experiment Description");
+            expListBox.Items.Add("Experiment Number \t Experiment Description");
+        }
+        //enable extra labels
+        private void enabledLabels()
+        {
+            exResWeight.Enabled = true;
+            exResColor.Enabled = true;
+            exVolume.Enabled = true;
+            resultColorLabel.Enabled = true;
+            resultVolLabel.Enabled = true;
+            resultWLabel.Enabled = true;
+        }
+
+        private void expListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -31,16 +31,16 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.resultWLabel = new System.Windows.Forms.Label();
+            this.resultColorLabel = new System.Windows.Forms.Label();
+            this.resultVolLabel = new System.Windows.Forms.Label();
             this.clearButton = new System.Windows.Forms.Button();
             this.exitButton = new System.Windows.Forms.Button();
             this.stuNameBox = new System.Windows.Forms.TextBox();
             this.exNumBox = new System.Windows.Forms.TextBox();
             this.expDescriptionBox = new System.Windows.Forms.TextBox();
             this.exResWeight = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.exVolume = new System.Windows.Forms.TextBox();
             this.saveButton = new System.Windows.Forms.Button();
             this.expListBox = new System.Windows.Forms.ListBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -70,38 +70,41 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(21, 145);
+            this.label3.Location = new System.Drawing.Point(195, 55);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(118, 13);
             this.label3.TabIndex = 2;
             this.label3.Text = "Experiment Description:";
             // 
-            // label4
+            // resultWLabel
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(23, 71);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(77, 13);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Result Weight:";
+            this.resultWLabel.AutoSize = true;
+            this.resultWLabel.Enabled = false;
+            this.resultWLabel.Location = new System.Drawing.Point(23, 129);
+            this.resultWLabel.Name = "resultWLabel";
+            this.resultWLabel.Size = new System.Drawing.Size(77, 13);
+            this.resultWLabel.TabIndex = 3;
+            this.resultWLabel.Text = "Result Weight:";
             // 
-            // label5
+            // resultColorLabel
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(277, 70);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(67, 13);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "Result Color:";
+            this.resultColorLabel.AutoSize = true;
+            this.resultColorLabel.Enabled = false;
+            this.resultColorLabel.Location = new System.Drawing.Point(277, 128);
+            this.resultColorLabel.Name = "resultColorLabel";
+            this.resultColorLabel.Size = new System.Drawing.Size(67, 13);
+            this.resultColorLabel.TabIndex = 4;
+            this.resultColorLabel.Text = "Result Color:";
             // 
-            // label6
+            // resultVolLabel
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(22, 110);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(78, 13);
-            this.label6.TabIndex = 5;
-            this.label6.Text = "Result Volume:";
+            this.resultVolLabel.AutoSize = true;
+            this.resultVolLabel.Enabled = false;
+            this.resultVolLabel.Location = new System.Drawing.Point(22, 168);
+            this.resultVolLabel.Name = "resultVolLabel";
+            this.resultVolLabel.Size = new System.Drawing.Size(78, 13);
+            this.resultVolLabel.TabIndex = 5;
+            this.resultVolLabel.Text = "Result Volume:";
             // 
             // clearButton
             // 
@@ -139,30 +142,32 @@
             // 
             // expDescriptionBox
             // 
-            this.expDescriptionBox.Location = new System.Drawing.Point(24, 161);
+            this.expDescriptionBox.Location = new System.Drawing.Point(24, 71);
             this.expDescriptionBox.MaxLength = 500;
             this.expDescriptionBox.Multiline = true;
             this.expDescriptionBox.Name = "expDescriptionBox";
-            this.expDescriptionBox.Size = new System.Drawing.Size(460, 75);
+            this.expDescriptionBox.Size = new System.Drawing.Size(460, 35);
             this.expDescriptionBox.TabIndex = 10;
             // 
             // exResWeight
             // 
-            this.exResWeight.Location = new System.Drawing.Point(108, 67);
+            this.exResWeight.Enabled = false;
+            this.exResWeight.Location = new System.Drawing.Point(108, 125);
             this.exResWeight.Name = "exResWeight";
             this.exResWeight.Size = new System.Drawing.Size(121, 20);
             this.exResWeight.TabIndex = 11;
             // 
-            // textBox5
+            // exVolume
             // 
-            this.textBox5.Location = new System.Drawing.Point(108, 107);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(121, 20);
-            this.textBox5.TabIndex = 12;
+            this.exVolume.Enabled = false;
+            this.exVolume.Location = new System.Drawing.Point(108, 165);
+            this.exVolume.Name = "exVolume";
+            this.exVolume.Size = new System.Drawing.Size(121, 20);
+            this.exVolume.TabIndex = 12;
             // 
             // saveButton
             // 
-            this.saveButton.Location = new System.Drawing.Point(431, 110);
+            this.saveButton.Location = new System.Drawing.Point(411, 163);
             this.saveButton.Name = "saveButton";
             this.saveButton.Size = new System.Drawing.Size(75, 23);
             this.saveButton.TabIndex = 14;
@@ -173,15 +178,16 @@
             // expListBox
             // 
             this.expListBox.FormattingEnabled = true;
-            this.expListBox.Location = new System.Drawing.Point(27, 267);
+            this.expListBox.Location = new System.Drawing.Point(24, 220);
             this.expListBox.Name = "expListBox";
-            this.expListBox.Size = new System.Drawing.Size(457, 173);
+            this.expListBox.Size = new System.Drawing.Size(391, 173);
             this.expListBox.TabIndex = 15;
+            this.expListBox.SelectedIndexChanged += new System.EventHandler(this.expListBox_SelectedIndexChanged);
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(223, 251);
+            this.label7.Location = new System.Drawing.Point(82, 204);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(64, 13);
             this.label7.TabIndex = 16;
@@ -189,7 +195,7 @@
             // 
             // createButton
             // 
-            this.createButton.Location = new System.Drawing.Point(269, 110);
+            this.createButton.Location = new System.Drawing.Point(249, 163);
             this.createButton.Name = "createButton";
             this.createButton.Size = new System.Drawing.Size(75, 23);
             this.createButton.TabIndex = 17;
@@ -199,14 +205,15 @@
             // 
             // exResColor
             // 
-            this.exResColor.Location = new System.Drawing.Point(363, 66);
+            this.exResColor.Enabled = false;
+            this.exResColor.Location = new System.Drawing.Point(363, 124);
             this.exResColor.Name = "exResColor";
             this.exResColor.Size = new System.Drawing.Size(121, 20);
             this.exResColor.TabIndex = 18;
             // 
             // setButton
             // 
-            this.setButton.Location = new System.Drawing.Point(350, 110);
+            this.setButton.Location = new System.Drawing.Point(330, 163);
             this.setButton.Name = "setButton";
             this.setButton.Size = new System.Drawing.Size(75, 23);
             this.setButton.TabIndex = 19;
@@ -218,23 +225,23 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(535, 518);
+            this.ClientSize = new System.Drawing.Size(508, 518);
             this.Controls.Add(this.setButton);
             this.Controls.Add(this.exResColor);
             this.Controls.Add(this.createButton);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.expListBox);
             this.Controls.Add(this.saveButton);
-            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.exVolume);
             this.Controls.Add(this.exResWeight);
             this.Controls.Add(this.expDescriptionBox);
             this.Controls.Add(this.exNumBox);
             this.Controls.Add(this.stuNameBox);
             this.Controls.Add(this.exitButton);
             this.Controls.Add(this.clearButton);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.resultVolLabel);
+            this.Controls.Add(this.resultColorLabel);
+            this.Controls.Add(this.resultWLabel);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -251,16 +258,16 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label resultWLabel;
+        private System.Windows.Forms.Label resultColorLabel;
+        private System.Windows.Forms.Label resultVolLabel;
         private System.Windows.Forms.Button clearButton;
         private System.Windows.Forms.Button exitButton;
         private System.Windows.Forms.TextBox stuNameBox;
         private System.Windows.Forms.TextBox exNumBox;
         private System.Windows.Forms.TextBox expDescriptionBox;
         private System.Windows.Forms.TextBox exResWeight;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox exVolume;
         private System.Windows.Forms.Button saveButton;
         private System.Windows.Forms.ListBox expListBox;
         private System.Windows.Forms.Label label7;
