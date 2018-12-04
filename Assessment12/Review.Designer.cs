@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.resultVolLabel = new System.Windows.Forms.Label();
-            this.resultColorLabel = new System.Windows.Forms.Label();
-            this.resultWLabel = new System.Windows.Forms.Label();
+            this.ReviewVolLabel = new System.Windows.Forms.Label();
+            this.reviewColorLabel = new System.Windows.Forms.Label();
+            this.reviewWLabel = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -43,40 +43,37 @@
             this.rVolumeLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // resultVolLabel
+            // ReviewVolLabel
             // 
-            this.resultVolLabel.AutoSize = true;
-            this.resultVolLabel.Enabled = false;
-            this.resultVolLabel.Location = new System.Drawing.Point(43, 207);
-            this.resultVolLabel.Name = "resultVolLabel";
-            this.resultVolLabel.Size = new System.Drawing.Size(78, 13);
-            this.resultVolLabel.TabIndex = 25;
-            this.resultVolLabel.Text = "Result Volume:";
+            this.ReviewVolLabel.AutoSize = true;
+            this.ReviewVolLabel.Location = new System.Drawing.Point(43, 177);
+            this.ReviewVolLabel.Name = "ReviewVolLabel";
+            this.ReviewVolLabel.Size = new System.Drawing.Size(78, 13);
+            this.ReviewVolLabel.TabIndex = 25;
+            this.ReviewVolLabel.Text = "Result Volume:";
             // 
-            // resultColorLabel
+            // reviewColorLabel
             // 
-            this.resultColorLabel.AutoSize = true;
-            this.resultColorLabel.Enabled = false;
-            this.resultColorLabel.Location = new System.Drawing.Point(54, 172);
-            this.resultColorLabel.Name = "resultColorLabel";
-            this.resultColorLabel.Size = new System.Drawing.Size(67, 13);
-            this.resultColorLabel.TabIndex = 24;
-            this.resultColorLabel.Text = "Result Color:";
+            this.reviewColorLabel.AutoSize = true;
+            this.reviewColorLabel.Location = new System.Drawing.Point(54, 142);
+            this.reviewColorLabel.Name = "reviewColorLabel";
+            this.reviewColorLabel.Size = new System.Drawing.Size(67, 13);
+            this.reviewColorLabel.TabIndex = 24;
+            this.reviewColorLabel.Text = "Result Color:";
             // 
-            // resultWLabel
+            // reviewWLabel
             // 
-            this.resultWLabel.AutoSize = true;
-            this.resultWLabel.Enabled = false;
-            this.resultWLabel.Location = new System.Drawing.Point(44, 137);
-            this.resultWLabel.Name = "resultWLabel";
-            this.resultWLabel.Size = new System.Drawing.Size(77, 13);
-            this.resultWLabel.TabIndex = 23;
-            this.resultWLabel.Text = "Result Weight:";
+            this.reviewWLabel.AutoSize = true;
+            this.reviewWLabel.Location = new System.Drawing.Point(44, 107);
+            this.reviewWLabel.Name = "reviewWLabel";
+            this.reviewWLabel.Size = new System.Drawing.Size(77, 13);
+            this.reviewWLabel.TabIndex = 23;
+            this.reviewWLabel.Text = "Result Weight:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(3, 102);
+            this.label3.Location = new System.Drawing.Point(3, 206);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(118, 13);
             this.label3.TabIndex = 22;
@@ -102,7 +99,7 @@
             // 
             // closeButton
             // 
-            this.closeButton.Location = new System.Drawing.Point(137, 250);
+            this.closeButton.Location = new System.Drawing.Point(138, 347);
             this.closeButton.Name = "closeButton";
             this.closeButton.Size = new System.Drawing.Size(75, 23);
             this.closeButton.TabIndex = 26;
@@ -129,15 +126,15 @@
             // exDescLabel
             // 
             this.exDescLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.exDescLabel.Location = new System.Drawing.Point(127, 102);
+            this.exDescLabel.Location = new System.Drawing.Point(57, 223);
             this.exDescLabel.Name = "exDescLabel";
-            this.exDescLabel.Size = new System.Drawing.Size(100, 23);
+            this.exDescLabel.Size = new System.Drawing.Size(336, 116);
             this.exDescLabel.TabIndex = 29;
             // 
             // rWeightLabel
             // 
             this.rWeightLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.rWeightLabel.Location = new System.Drawing.Point(127, 137);
+            this.rWeightLabel.Location = new System.Drawing.Point(127, 107);
             this.rWeightLabel.Name = "rWeightLabel";
             this.rWeightLabel.Size = new System.Drawing.Size(100, 23);
             this.rWeightLabel.TabIndex = 30;
@@ -145,7 +142,7 @@
             // rColorLabel
             // 
             this.rColorLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.rColorLabel.Location = new System.Drawing.Point(127, 172);
+            this.rColorLabel.Location = new System.Drawing.Point(127, 142);
             this.rColorLabel.Name = "rColorLabel";
             this.rColorLabel.Size = new System.Drawing.Size(100, 23);
             this.rColorLabel.TabIndex = 31;
@@ -153,7 +150,7 @@
             // rVolumeLabel
             // 
             this.rVolumeLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.rVolumeLabel.Location = new System.Drawing.Point(127, 207);
+            this.rVolumeLabel.Location = new System.Drawing.Point(127, 177);
             this.rVolumeLabel.Name = "rVolumeLabel";
             this.rVolumeLabel.Size = new System.Drawing.Size(100, 23);
             this.rVolumeLabel.TabIndex = 32;
@@ -162,7 +159,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(349, 285);
+            this.ClientSize = new System.Drawing.Size(469, 382);
             this.Controls.Add(this.rVolumeLabel);
             this.Controls.Add(this.rColorLabel);
             this.Controls.Add(this.rWeightLabel);
@@ -170,9 +167,9 @@
             this.Controls.Add(this.exNumLabel);
             this.Controls.Add(this.stuNameLabel);
             this.Controls.Add(this.closeButton);
-            this.Controls.Add(this.resultVolLabel);
-            this.Controls.Add(this.resultColorLabel);
-            this.Controls.Add(this.resultWLabel);
+            this.Controls.Add(this.ReviewVolLabel);
+            this.Controls.Add(this.reviewColorLabel);
+            this.Controls.Add(this.reviewWLabel);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -184,9 +181,9 @@
         }
 
         #endregion
-        private System.Windows.Forms.Label resultVolLabel;
-        private System.Windows.Forms.Label resultColorLabel;
-        private System.Windows.Forms.Label resultWLabel;
+        private System.Windows.Forms.Label ReviewVolLabel;
+        private System.Windows.Forms.Label reviewColorLabel;
+        private System.Windows.Forms.Label reviewWLabel;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;

@@ -15,6 +15,7 @@ namespace Assessment12
         const int SIZE = 50;
         Experiment[] Experiments = new Experiment[SIZE];
         private Experiment exp = new Experiment();
+        int expCount = 0;
         public Form1()
         {
             InitializeComponent();
@@ -80,20 +81,43 @@ namespace Assessment12
 
         private void saveButton_Click(object sender, EventArgs e)
         {
-            Experiments[exp.ExpNumber] = new Experiment();
+            
 
-            //print data to list box
-         expListBox.Items.Add(exp.ExpNumber + " \t " + exp.ExDesc);
-            //clear data from fields
-            stuNameBox.Clear();
-            exNumBox.Clear();
-            exResColor.Clear();
-            expDescriptionBox.Clear();
-            exResWeight.Clear();
-            exVolume.Clear();
+            if (this is where i am getting stuck )
+            {
+                Experiments[exp.ExpNumber] = new Experiment();
+            }
+            else
+            {
+                Experiments[exp.ExpNumber] = new Experiment();
+                expListBox.Items.Add(exp.ExpNumber + " \t " + exp.ExDesc);
+                //clear data from fields
+                stuNameBox.Clear();
+                exNumBox.Clear();
+                exResColor.Clear();
+                expDescriptionBox.Clear();
+                exResWeight.Clear();
+                exVolume.Clear();
+                expCount++;
+                if (expCount == SIZE)
+                {
+                    disableAll();
+                }
+            }
             
         }
-
+        private void disableAll()
+        {
+            exResWeight.Enabled = false;
+            exResColor.Enabled = false;
+            exVolume.Enabled = false;
+            resultColorLabel.Enabled = false;
+            resultVolLabel.Enabled = false;
+            resultWLabel.Enabled = false;
+            stuNameBox.Enabled = false;
+            exNumBox.Enabled = false;
+            expDescriptionBox.Enabled = false;
+        }
         private void clearButton_Click(object sender, EventArgs e)
         {
             //clearing all parts of the form as well don't forget to clear the array
@@ -104,7 +128,8 @@ namespace Assessment12
             exResWeight.Clear();
             exVolume.Clear();
             expListBox.Items.Clear();
-           
+            expListBox.Items.Add("Experiment Number \t Experiment Description");
+
 
 
         }
@@ -124,20 +149,28 @@ namespace Assessment12
             resultVolLabel.Enabled = true;
             resultWLabel.Enabled = true;
         }
-
-        private void expListBox_DoubleClick(object sender, EventArgs e)
-        {
-
-        }
+        
         private void expListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Review reviewForm = new Review();
+         
 
             int index = expListBox.SelectedIndex;
-
-            reviewForm.stuNameLabel.Text = "";
-
            
+                displayExperiment(index);
+        
+           
+        }
+        private void displayExperiment(int index)
+        {
+            Review reviewForm = new Review();
+            reviewForm.ShowDialog();
+            reviewForm.stuNameLabel.Text = "";
+            reviewForm.exNumLabel.Text = index.ToString();
+            reviewForm.exDescLabel.Text = "";
+            reviewForm.rWeightLabel.Text = "";
+            reviewForm.rColorLabel.Text = "";
+            reviewForm.rVolumeLabel.Text = "";
+
         }
     }
 }
